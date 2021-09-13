@@ -46,7 +46,7 @@ public interface JpaConst {
     String Q_EMP_COUNT_DEF = "SELECT COUNT(e) FROM Employee AS e";
     
     String Q_EMP_GET_BY_CODE_AND_PASS = ENTITY_EMP + ".getBYCodeAndPass";
-    String Q_EMP_GET_BY_CODE_AND_PASS_DEF = "SELECT e FROM EMployee AS e WHERE e.deleteFlag = 0 AND e.code = :" + JPQL_PARM_CODE + " AND e.password = :" + JPQL_PARM_PASSWORD;
+    String Q_EMP_GET_BY_CODE_AND_PASS_DEF = "SELECT e FROM Employee AS e WHERE e.deleteFlag = 0 AND e.code = :" + JPQL_PARM_CODE + " AND e.password = :" + JPQL_PARM_PASSWORD;
     
     String Q_EMP_COUNT_RESISTERED_BY_CODE = ENTITY_EMP + ".countRegisteredByCode";
     String Q_EMP_COUNT_RESISTERED_BY_CODE_DEF = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :" + JPQL_PARM_CODE;
