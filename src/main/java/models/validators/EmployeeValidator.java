@@ -49,7 +49,7 @@ public class EmployeeValidator {
         return "";
     }
     
-    private static long isDuplicateEmployee(EmployeeService , String code) {
+    private static long isDuplicateEmployee(EmployeeService service, String code) {
         
         long employeesCount = service.countByCode(code);
         return employeesCount;
