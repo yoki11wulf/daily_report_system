@@ -49,7 +49,7 @@ public abstract class ActionBase {
             
             e.printStackTrace();
             
-            forward(ForwardConst.FW_ERR_UNKNOMN);
+            forward(ForwardConst.FW_ERR_UNKNOWN);
         
         }
     }
@@ -81,7 +81,7 @@ public abstract class ActionBase {
         
         if(_token == null || !(_token.equals(getTokenId()))) {
             
-            forward(ForwardConst.FW_ERR_UNKNOMN);
+            forward(ForwardConst.FW_ERR_UNKNOWN);
             
             return false;
             

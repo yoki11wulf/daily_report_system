@@ -97,7 +97,7 @@ public class EmployeeAction extends ActionBase {
         
         if(ev == null || ev.getDeleteFlag() == AttributeConst.DEL_FLAG_TRUE.getIntegerValue()) {
             
-            forward(ForwardConst.FW_ERR_UNKNOMN);
+            forward(ForwardConst.FW_ERR_UNKNOWN);
             return;
             
         }
@@ -105,6 +105,23 @@ public class EmployeeAction extends ActionBase {
         putRequestScope(AttributeConst.EMPLOYEE, ev);
         
         forward(ForwardConst.FW_EMP_SHOW);
+    }
+    
+    public void edit() throws ServletException, IOException{
+        
+        EmployeeView ev = service.findOne(toNumber(getRequestParam(AttributeConst.EMP_ID)));
+        
+        if(ev == null || ev.getDeleteFlag() == AttributeConst.DEL_FLAG_TRUE.getIntegerValue()) {
+            
+            forward(ForwardConst.FW_ERR_UNKNOWN);
+            return;
+            
+        }
+        
+        putRequestScope(AttributeConst.TOKEN, getTokenId());
+        putRequestScope(AttributeConst.EMPLOYEE, ev);
+        
+        forward(ForwardConst.FW_EMP_EDIT);
     }
 
 }
